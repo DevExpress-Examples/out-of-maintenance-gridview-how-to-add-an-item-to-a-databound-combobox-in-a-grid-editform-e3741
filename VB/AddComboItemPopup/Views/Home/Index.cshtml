@@ -1,0 +1,20 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@{
+    ViewBag.Title = "Home Page";
+}
+@Html.Partial("_GridView", Model)
+@Html.DevExpress().PopupControl(settings => {
+    settings.Name = "popup";
+    settings.HeaderText = "Products";
+    settings.AllowDragging = true;
+    settings.PopupHorizontalAlign = PopupHorizontalAlign.OutsideRight;
+    settings.PopupHorizontalOffset = 5;
+    settings.EnableClientSideAPI = true;
+    
+    
+    settings.SetContent(() => {
+        ViewContext.Writer.Write(
+           @Html.Partial("_EditComboBox", ViewData["Products"])
+        );
+    });
+}).GetHtml()

@@ -1,0 +1,34 @@
+﻿@using DevExpress.Web.Mvc.UI;
+@using DevExpress.Web.Mvc;
+@{
+    var gridComboBox = Html.DevExpress().GridView(
+        settings => {
+            settings.Name = "gridComboBox";
+            settings.KeyFieldName = "Id";
+            settings.Width = new System.Web.UI.WebControls.Unit(300, System.Web.UI.WebControls.UnitType.Pixel);
+
+            settings.CallbackRouteValues = new { Controller = "Home", Action = "gridComboBoxPartial" };
+            settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Home", Action = "AddNewComboBoxPartial" };
+            settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Home", Action = "UpdateComboBoxPartial" };
+            settings.SettingsEditing.Mode = GridViewEditingMode.Inline;
+
+            settings.CommandColumn.Visible = true;
+            settings.CommandColumn.NewButton.Visible = true;
+            settings.CommandColumn.EditButton.Visible = true;
+
+
+            settings.Columns.Add("Name", MVCxGridViewColumnType.TextBox);
+            settings.Columns.Add("Price", MVCxGridViewColumnType.TextBox).PropertiesEdit.DisplayFormatString = "c";
+
+            settings.SettingsBehavior.AllowDragDrop = false;
+
+            settings.ClientSideEvents.BeginCallback = "OnGridProducts_BeginCallback";
+            settings.ClientSideEvents.EndCallback = "OnGridProducts_EndCallback";
+          
+        });
+
+    if (ViewData["EditgridComboBoxError"] != null) {
+        gridComboBox.SetEditErrorText((string)ViewData["EditgridComboBoxError"]);
+    }
+}
+@gridComboBox.Bind(Model).GetHtml()
