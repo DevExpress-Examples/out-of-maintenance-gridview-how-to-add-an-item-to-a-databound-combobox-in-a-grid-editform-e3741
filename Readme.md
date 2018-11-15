@@ -1,3 +1,13 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [HomeController.cs](./CS/AddComboItemPopup/Controllers/HomeController.cs) (VB: [HomeController.vb](./VB/AddComboItemPopup/Controllers/HomeController.vb))
+* [OrderItems.cs](./CS/AddComboItemPopup/Models/OrderItems.cs) (VB: [OrderItems.vb](./VB/AddComboItemPopup/Models/OrderItems.vb))
+* [JScript1.js](./CS/AddComboItemPopup/Scripts/JScript1.js) (VB: [JScript1.js](./VB/AddComboItemPopup/Scripts/JScript1.js))
+* [_EditComboBox.cshtml](./CS/AddComboItemPopup/Views/Home/_EditComboBox.cshtml)
+* [_GridView.cshtml](./CS/AddComboItemPopup/Views/Home/_GridView.cshtml)
+* [Index.cshtml](./CS/AddComboItemPopup/Views/Home/Index.cshtml)
+<!-- default file list end -->
 # GridView - How to add an item to a databound ComboBox in a grid EditForm
 
 
