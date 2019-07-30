@@ -10,7 +10,7 @@
 <!-- default file list end -->
 # GridView - How to add an item to a databound ComboBox in a grid EditForm
 <!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/e3741)**
+**[[Run Online]](https://codecentral.devexpress.com/e3741/)**
 <!-- run online end -->
 
 
